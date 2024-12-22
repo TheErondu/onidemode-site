@@ -1,0 +1,68 @@
+{
+    "sections": [
+      {
+        "id": "banner",
+        "title": "ONÍDÈMỌDÈ",
+        "description": "Step into the world of Yoruba heritage, where language, history, and traditions come alive. At ONÍDÈMỌDÈ, we honor the timeless beauty of Yoruba life by showcasing its wisdom, culture, and artistic brilliance to the world.",
+        "cta": {
+          "text": "See Recent Episodes",
+          "link": "Portfolio-grid-col-5.html"
+        },
+        "images": [
+          {
+            "position": "right-bottom",
+            "src": "assets/images/banner/16.webp"
+          },
+          {
+            "position": "left-center",
+            "src": "assets/images/banner/17.webp"
+          }
+        ]
+      },
+      {
+        "id": "about",
+        "title": "ABOUT ONÍDÈMỌDÈ",
+        "subtitle": "Yoruba Essence, Culture Reimagined.",
+        "description": "ONÍDÈMỌDÈ is purely about the language, culture, heritage, traditions, and life of the Yoruba-speaking people. A well cultural, entertaining Game Show that was created and innovated with new methods and ideas to introduce to the whole world, the beautiful and unique culture, language, tradition, and life of the Yoruba people of West Africa. We will engage contestants on Yoruba history, language, culture, education, religion, family, economics, music, literature, belief system, etc.",
+        "cta": {
+          "text": "About Us",
+          "link": "about.html"
+        },
+        "image": "assets/images/banner/logo_backdrop.webp"
+      },
+      {
+        "id": "team",
+        "title": "Meet the Host",
+        "members": [
+          {
+            "id": 1,
+            "name": "Adeoye Abefe Owolabi - Awíkonko",
+            "designation": "Professional Broadcast Journalist",
+            "social_links": {
+              "facebook": "#",
+              "twitter": "#",
+              "youtube": "#",
+              "linkedin": "#"
+            },
+            "image": "assets/images/team/01.jpg"
+          }
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Contact Us",
+        "description": "We'd love to hear from you! Reach out to us for inquiries, partnerships, or to learn more about ONÍDÈMỌDÈ.",
+        "contact_details": {
+          "email": "info@onidemode.com",
+          "phone": "+234 123 4567 890",
+          "address": "123 Yoruba Heritage Avenue, Lagos, Nigeria"
+        },
+        "social_links": {
+          "facebook": "#",
+          "twitter": "#",
+          "instagram": "#",
+          "youtube": "#"
+        }
+      }
+    ]
+  }

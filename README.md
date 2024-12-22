@@ -1,6 +1,3 @@
-
----
-
 # ONÍDÈMỌDÈ Game Show
 
 Welcome to **ONÍDÈMỌDÈ**—a captivating game show that celebrates the rich heritage, language, and traditions of the Yoruba people. Whether you're a proud son or daughter of Yorubaland or a curious explorer of African culture, this show is your gateway to the vibrant world of Yoruba life.

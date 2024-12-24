@@ -16,9 +16,9 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="/about">About us</a></li>
-                        <li><a href="/meet-the-ceo">Meet the CEO</a></li>
-                        <li><a href="/contact">Reach out</a></li>
+                        <li><a href="{{route('frontend.about')}}">About us</a></li>
+                        <li><a href="{{route('frontend.meet-the-ceo')}}">Meet the CEO</a></li>
+                        <li><a href="{{route('frontend.home')}}">Reach out</a></li>
                     </ul>
                 </nav>
             </div>

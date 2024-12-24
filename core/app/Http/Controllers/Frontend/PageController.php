@@ -19,14 +19,14 @@ class PageController extends Controller
     public function about()
     {
         $page = Page::where('slug', 'about')->first();
-        $data = new HomePageDTO($page->content['sections']);
+        $data = $page->content['sections'];
         return view('frontend.about', compact('data'));
     }
 
     public function meet_the_ceo()
     {
         $page = Page::where('slug', 'meet-the-ceo')->first();
-        $data = new HomePageDTO($page->content['sections']);
+        $data = $page->content['sections'];
         return view('frontend.meet-the-ceo', compact('data'));
     }
 

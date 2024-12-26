@@ -12,13 +12,13 @@
                             <a class="nav-link" href="#">ONÍDÈMỌDÈ</a>
                             <ul class="submenu">
                                 <li class="lim"><a class="sdm-main" href="{{route('frontend.participants.register')}}">Register as a participant</a></li>
-                                <li class="lim"><a class="sdm-main" href="">Watch Previous Episodes</a></li>
+                                <li class="lim"><a class="sdm-main" href="{{ asset(config('settings.youtube_previous_episodes_link', 'https://www.youtube.com/@Awikonkotv/videos')) }}">Watch Previous Episodes</a></li>
                                 </li>
                             </ul>
                         </li>
                         <li><a href="{{route('frontend.about')}}">About us</a></li>
                         <li><a href="{{route('frontend.meet-the-ceo')}}">Meet the CEO</a></li>
-                        <li><a href="{{route('frontend.home')}}">Reach out</a></li>
+                        <li><a href="{{route('frontend.contact')}}">Reach out</a></li>
                     </ul>
                 </nav>
             </div>

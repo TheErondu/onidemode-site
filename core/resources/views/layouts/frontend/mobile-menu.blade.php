@@ -6,26 +6,22 @@
         <!-- inner menu area desktop start -->
         <div class="inner-main-wrapper-desk">
             <div class="thumbnail">
-                <img src="assets/images/logo/01.svg" alt="Innovate">
+                <img src="{{asset('assets/images/logo/ONIDEMODE.webp')}}" alt="Innovate">
             </div>
             <div class="inner-content">
                 <p class="disc">
-                    Innovate Architects is a full-service design firm providing architecture architecture.
+                    {{ config('settings.site_name', 'ONIDEMODE - Yoruba Essence, Culture Reimagined.') }}
                 </p>
                 <div class="contact-information--sidebar">
                     <h6 class="title">Contact Info</h6>
                     <div class="single-info">
-                        <a href="#">+123 456 789 33</a>
+                        <a href="#"> {{ config('settings.site_contact_phone') }}</a>
                     </div>
                     <div class="single-info">
-                        <a href="#">3 innovate Street, NY United <br> States of America</a>
+                        <a href="#">{{ config('settings.site_contact_address') }}</a>
                     </div>
                     <div class="single-info">
-                        <a href="#">Innovate@gmail.com</a>
-                    </div>
-                    <h6 class="title mt--30">Office Address</h6>
-                    <div class="single-info">
-                        <a href="#">+Time Square, New York <br> USA, 3454</a>
+                        <a href="#">{{ config('settings.site_contact_email') }}</a>
                     </div>
                     <div class="rts-social-style-one">
                         <ul>
@@ -53,8 +49,8 @@
                     </div>
                 </div>
                 <div class="footer">
-                    <h4 class="title">Got a project in mind?</h4>
-                    <a href="contact.html" class="rts-btn btn-primary">Let's talk</a>
+                    <h4 class="title">Want to reach out?</h4>
+                    <a href="{{route('frontend.contact')}}" class="rts-btn btn-primary">Let's talk</a>
                 </div>
             </div>
         </div>

@@ -11,21 +11,19 @@ class AdminController  extends Controller
 {
 
 
-    public function createPage() {}
+    public function createPage() {
+        
+    }
 
     public function managePage(Page $page)
     {
-        return view('admin.dashboard.pages.manage', ['page' => $page]);
+        return view('admin.dashboard.pages.manage', ['page' =>$page]);
     }
 
     public function updatePage(Request $request, Page $page)
     {
         // Validate the incoming request
         $request->validate([
-            'page_name' => 'required|string|max:255',
-            'slug' => 'nullable|string|max:255',
-            'page_title' => 'required|string|max:255',
-            'page_subtitle' => 'required|string|max:255',
             'sections' => 'required|array', // Sections must be an array
         ]);
 
@@ -36,15 +34,15 @@ class AdminController  extends Controller
 
         // Update the page with the new data
         $page->update([
-            'page_name' => $request->input('page_name'),
-            'slug' => $request->input('slug'),
-            'page_title' => $request->input('page_title'),
-            'page_subtitle' => $request->input('page_subtitle'),
-            'content' => json_encode($content, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT),
+            'page_name' => $page->page_name,
+            'slug' => $page->slug,
+            'page_title' => $page->page_title,
+            'page_subtitle' => $page->page_subtitle,
+            'content' => $content,
         ]);
 
         // Redirect with a success message
-        return redirect()->route('admin.pages.manage')->with('message', 'Page updated successfully!');
+        return redirect()->route('admin.pages.manage',$page)->with('message', 'Page updated successfully!');
     }
 
 
@@ -78,5 +76,4 @@ class AdminController  extends Controller
             ], 500);
         }
     }
-
 }

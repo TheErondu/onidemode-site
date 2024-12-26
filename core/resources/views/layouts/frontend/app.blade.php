@@ -80,6 +80,8 @@
     <!-- scripts -->
     <script src="{{asset('assets/js/vendor/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/plugins/scrolltoplugin.js')}}"></script>
+    <script src="{{asset('assets/js/vendor/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/vendor/waw.js')}}"></script>
 
     <!-- gsap plugins -->
     <script src="{{asset('assets/js/vendor/gsap.js')}}"></script>

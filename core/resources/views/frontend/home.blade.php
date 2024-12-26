@@ -10,7 +10,7 @@
                         <p class="disc">
                             {{$data->sections[0]->description}}
                         </p>
-                        <a href="Portfolio-grid-col-5.html" class="rts-btn btn-border radious">{{$data->sections[0]->cta->text}}<i
+                        <a href="{{ asset(config('settings.youtube_previous_episodes_link', 'https://www.youtube.com/@Awikonkotv/videos')) }}" class="rts-btn btn-border radious">{{$data->sections[0]->cta->text}}<i
                                 class="fa-thin fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
 
 
                         </p>
-                        <a href="{{$data->sections[0]->cta->link}}" class="rts-btn btn-border radious-3">{{$data->sections[1]->cta->text}}<i
+                        <a href="{{route('frontend.about')}}" class="rts-btn btn-border radious-3">{{$data->sections[1]->cta->text}}<i
                                 class="fa-thin fa-arrow-right"></i></a>
                     </div>
                     <!-- about left area start home three end -->
@@ -268,7 +268,7 @@
                             economics, family, and belief systems. It's an engaging way to celebrate and sustain the essence
                             of Yoruba culture.</h2>
 
-                        <a href="contact.html" class="rts-btn btn-border">Register as a participant<i
+                        <a href="{{route('frontend.participants.register')}}" class="rts-btn btn-border">Register as a participant<i
                                 class="fa-regular fa-arrow-right"></i></a>
                     </div>
                 </div>

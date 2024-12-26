@@ -30,6 +30,13 @@ class PageController extends Controller
         return view('frontend.meet-the-ceo', compact('data'));
     }
 
+    public function contact_us()
+    {
+        $page = Page::where('slug', 'contact-us')->first();
+        $data = $page->content['sections'];
+        return view('frontend.contact', compact('data'));
+    }
+
     public function registerParticipant()
     {
         return view('frontend.register');

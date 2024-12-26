@@ -38,7 +38,7 @@
                 </div>
             </div>
         </div>
-        <form method="POST" action="{{ route('admin.pages.manage.update', $page['id']) }}">
+        <form method="POST" action="{{ route('admin.pages.manage.update', $page) }}">
             @csrf
             @method('PUT')
             <div class="card-body">

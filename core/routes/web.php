@@ -13,6 +13,7 @@ Route::get('/', [PageController::class, 'home'])->name('frontend.home');
 
 Route::get('/about', [PageController::class, 'about'])->name('frontend.about');
 Route::get('/meet-the-ceo', [PageController::class, 'meet_the_ceo'])->name('frontend.meet-the-ceo');
+Route::get('/contact-us', [PageController::class, 'contact_us'])->name('frontend.contact');
 Route::get('/participants/register', [PageController::class, 'registerParticipant'])->name('frontend.participants.register');
 
 Route::post('/participants/payment/process', [PaymentsController::class, 'redirectToGateway'])->name('participants.payment.process');
@@ -24,7 +25,7 @@ Route::middleware('auth')->group(function () {
         return view('admin.home');
     })->name('back-office');
 
-    Route::post('/back-office/pages/manage/update/{page}', [AdminController::class, 'managePage'])->name('admin.pages.manage.update');
+    Route::put('/back-office/pages/manage/update/{page}', [AdminController::class, 'updatePage'])->name('admin.pages.manage.update');
     Route::get('/back-office/pages/manage/{page}', [AdminController::class, 'managePage'])->name('admin.pages.manage');
     Route::post('/back-office/pages/manage/upload', [AdminController::class, 'uploadFile'])->name('admin.pages.manage.upload');
     Route::get('/back-office/settings', [SettingController::class, 'index'])->name('admin.settings.manage');

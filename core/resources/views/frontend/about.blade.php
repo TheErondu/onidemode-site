@@ -29,35 +29,31 @@
                 <div class="col-lg-4 col-md-4">
                     <div class="title-style-left">
                         <div class="pre-title-area">
-                            <img src="assets/images/about/02.png" alt="about">
-                            <span class="pre-title">ONIDEMODE</span>
+                            <img src="{{$data[0]['images'][0]['src']}}" alt="about">
+                            <span class="pre-title">{{$data[0]['title']}}</span>
                         </div>
-                        <h2 class="title">OUR VISION</h2>
+                        <h2 class="title">{{$data[0]['subtitle']}}</h2>
                     </div>
                     <div class="history-image-left mt--55 rts-reveal-one">
-                        <img class="rts-reveal-image-one" src="assets/images/banner/16.webp" alt="about">
+                        <img class="rts-reveal-image-one" src="{{$data[0]['images'][1]['src']}}" alt="about">
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 mt_sm--50">
                     <div class="history-right-area-inner">
                         <p class="disc rts-slide-up">
-                            To promote and elevate Yoruba language, culture and traditions, by focusing on its recovery,
-                            preservation, promotion and utilization of its ending ways of being for the purposes of holistic
-                            development, appreciation, and international understanding.
+                            {{$data[0]['description'][0]}}
                         </p>
                         <p class="disc rts-slide-up">
-                            To communicate effectively in Yoruba language and interact in its culturally appropriate manner
-                            with towns, cities and native dialects of Yoruba language.
+                            {{$data[0]['description'][1]}}
                         </p>
                         <p class="disc rts-slide-up">
-                            To achieve functional proficiency in listening, speaking, reading and writing Yoruba language
-                            correctly and appropriately.
+                            {{$data[0]['description'][2]}}
                             <br>
-                            To decode, analyse, and interpret authentic texts of different genres.
+                            {{$data[0]['description'][3]}}
 
                         </p>
                         <div class="history-right-img mt--80 rts-reveal-one">
-                            <img class="rts-reveal-image-one" src="assets/images/about/14.png" alt="">
+                            <img class="rts-reveal-image-one" src="{{$data[0]['images'][2]['src']}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -73,31 +69,26 @@
                     <div class="title-style-left">
                         <div class="pre-title-area">
                             <img src="assets/images/about/02.png" alt="about">
-                            <span class="pre-title">ONIDEMODE</span>
+                            <span class="pre-title">{{$data[1]['subtitle']}}</span>
                         </div>
-                        <h2 class="title">OUR MISSION</h2>
+                        <h2 class="title">{{$data[1]['title']}}</h2>
                     </div>
                     <div class="history-image-left mt--55 rts-reveal-one">
-                        <img class="rts-reveal-image-one" src="assets/images/banner/16.webp" alt="about">
+                        <img class="rts-reveal-image-one" src="{{$data[1]['images'][0]['src']}}" alt="about">
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 mt_sm--50">
                     <div class="history-right-area-inner">
                         <p class="disc rts-slide-up">
-                            We surely believe that ONÍDÈMỌDÈ Game Show will provide audience, viewers, and all sons and
-                            daughters of Yoruba land with solid foundation in historical knowledge backgrounds of
-                            Yoruba-based philosophies and the contemporary nuances of the culture and life of the Yoruba
-                            people.
+                            {{$data[1]['description'][0]}}
 
                         </p>
                         <p class="disc rts-slide-up">
 
-                            We will explore various aspects of the Yoruba language, culture, heritage, tradition, history,
-                            literature and more to give the audience a broad overview of the world view of the Yoruba people
-                            and their lives.
+                            {{$data[1]['description'][1]}}
                         </p>
                         <div class="history-right-img mt--80 rts-reveal-one">
-                            <img class="rts-reveal-image-one" src="assets/images/about/14.png" alt="">
+                            <img class="rts-reveal-image-one" src="{{$data[1]['images'][1]['src']}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -111,20 +102,20 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="contct-thumbnail-left rts-reveal-one">
-                        <img class="rts-reveal-image-one" src="assets/images/contact/01.jpg" alt="">
+                        <img class="rts-reveal-image-one" src="{{$data[2]['images'][0]['src']}}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6 pl--60 pr--100 pr_md--10 pr_sm--10 pl_sm--10 pl_md--10 pt_md--50 pt_sm--50">
                     <div class="easy-appoinment-area">
                         <div class="title-left-style-seven-wrapper">
-                            <span class="pre">Feature Services</span>
-                            <h2 class="title">have any questions</h2>
+                            <span class="pre">{{$data[2]['title']}}</span>
+                            <h2 class="title">{{$data[2]['subtitle']}}</h2>
                         </div>
                         <form action="#">
-                            <input type="text" placeholder="Your Name">
-                            <input type="text" placeholder="Your Number">
-                            <textarea placeholder="Send Message"></textarea>
-                            <button class="rts-btn btn-primary">Send Now</button>
+                            <input type="{{$data[2]['form']['fields'][0]['type']}}" placeholder="{{$data[2]['form']['fields'][0]['placeholder']}}">
+                            <input type="{{$data[2]['form']['fields'][0]['type']}}" placeholder="{{$data[2]['form']['fields'][1]['placeholder']}}">
+                            <textarea placeholder="{{$data[2]['form']['fields'][2]['placeholder']}}"></textarea>
+                            <button class="rts-btn btn-primary">{{$data[2]['form']['button']['text']}}</button>
                         </form>
                     </div>
                 </div>

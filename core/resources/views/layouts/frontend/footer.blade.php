@@ -11,14 +11,14 @@
                                 </a>
                                 <!-- social style two -->
                                 <ul class="social-style-two-wrapper social-anim">
-                                    <li><a class="counter__anim" href="#"><i
+                                    <li><a class="counter__anim" href="{{ config('settings.facebook_page') }}"><i
                                                 class="fa-brands fa-facebook-f"></i></a>
                                     </li>
-                                    <li><a class="counter__anim" href="#"><i class="fa-brands fa-twitter"></i></a>
+                                    <li><a class="counter__anim" href="{{ config('settings.twitter_handle') }}"><i class="fa-brands fa-twitter"></i></a>
                                     </li>
-                                    <li><a class="counter__anim" href="#"><i class="fa-brands fa-youtube"></i></a>
+                                    <li><a class="counter__anim" href="{{ config('settings.youtube_previous_episodes_link') }}"><i class="fa-brands fa-youtube"></i></a>
                                     </li>
-                                    <li><a class="counter__anim" href="#"><i
+                                    <li><a class="counter__anim" href="{{ config('settings.linkedin_profile') }}"><i
                                                 class="fa-brands fa-linkedin-in"></i></a>
                                     </li>
                                 </ul>
@@ -28,17 +28,16 @@
                                 <h6 class="title">Our Address</h6>
                                 <div class="address">
                                     <a href="#">
-                                        1058 Helton Ave, Stky <br>
-                                        Berlin, Germany
+                                        {{ config('settings.site_contact_address') }}
                                     </a>
                                 </div>
                             </div>
                             <div class="single-wized right-center">
                                 <h6 class="title">Contact</h6>
                                 <div class="contact-call">
-                                    <a href="#">+23 5825-32535
+                                    <a href="tel:{{ config('settings.site_contact_phone') }}">{{ config('settings.site_contact_phone') }}
                                     </a>
-                                    <a href="#">inno@gmail.com
+                                    <a href="mailto:{{ config('settings.site_contact_email') }}">{{ config('settings.site_contact_email') }}
                                     </a>
                                 </div>
                             </div>

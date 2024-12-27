@@ -17,7 +17,6 @@ class SectionDTO
 
     public function __construct(array $data)
     {
-        $this->id = $data['id'];
         $this->title = $data['title'];
         $this->subtitle = $data['subtitle'] ?? null;
         $this->description = $data['description'] ?? null;

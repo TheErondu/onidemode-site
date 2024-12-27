@@ -9,7 +9,6 @@ class ImageDTO
 
     public function __construct(array $data)
     {
-        $this->position = $data['position'];
         $this->src = $data['src'];
     }
 }

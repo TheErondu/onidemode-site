@@ -76,7 +76,7 @@
                     <div class="team-style-three-wrapper">
                         <!-- single team style start -->
                         <div class="team-single-three-style">
-                            <a href="team-single.html" class="name-team">
+                            <a href="{{route('frontend.meet-the-ceo')}}" class="name-team">
                                 <span>01</span>
                                 {{$data->sections[2]->members[0]->name}}
                             </a>

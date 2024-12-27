@@ -14,7 +14,6 @@ class MemberDTO
 
     public function __construct(array $data)
     {
-        $this->id = $data['id'];
         $this->name = $data['name'];
         $this->designation = $data['designation'];
         $this->social_links = new SocialLinksDTO($data['social_links']);

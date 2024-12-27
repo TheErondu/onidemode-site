@@ -11,13 +11,11 @@ class AdminController  extends Controller
 {
 
 
-    public function createPage() {
-        
-    }
+    public function createPage() {}
 
     public function managePage(Page $page)
     {
-        return view('admin.dashboard.pages.manage', ['page' =>$page]);
+        return view('admin.dashboard.pages.' . $page->slug . '.manage', ['page' => $page]);
     }
 
     public function updatePage(Request $request, Page $page)
@@ -31,7 +29,6 @@ class AdminController  extends Controller
         $content = [
             'sections' => $request->input('sections')
         ];
-
         // Update the page with the new data
         $page->update([
             'page_name' => $page->page_name,
@@ -42,7 +39,7 @@ class AdminController  extends Controller
         ]);
 
         // Redirect with a success message
-        return redirect()->route('admin.pages.manage',$page)->with('message', 'Page updated successfully!');
+        return redirect()->route('admin.pages.manage', $page)->with('message', 'Page updated successfully!');
     }
 
 

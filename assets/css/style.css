@@ -16119,15 +16119,37 @@ a {
 }
 
 .bg_banner-4 {
-  background-image: url(../images/banner/15.jpg);
+  background-image: url(../images/banner/yoruba-people.webp);
+  background-size: cover;
+  background-position: center;
   height: 980px;
   position: relative;
   z-index: 0;
+}
+
+.bg_banner-4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Black overlay with 50% opacity */
+  z-index: 1; /* Ensures the overlay is above the background image */
+}
+
+.bg_banner-4 > * {
+  position: relative;
+  z-index: 2; /* Ensures the content inside .bg_banner-4 is above the overlay */
 }
 @media only screen and (max-width: 1199px) {
   .bg_banner-4 {
     height: 1260px;
   }
+  
+.banner-content-wrapper-4 .title{
+
+}
 }
 @media only screen and (max-width: 767px) {
   .bg_banner-4 {
@@ -16296,31 +16318,31 @@ a {
 }
 @media only screen and (max-width: 1199px) {
   .banner-content-wrapper-4 .title {
-    font-size: 150px;
+    font-size: 148px;
     line-height: 180px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .banner-content-wrapper-4 .title {
-    font-size: 110px;
+    font-size: 109px;
     line-height: 167px;
   }
 }
 @media only screen and (max-width: 767px) {
   .banner-content-wrapper-4 .title {
-    font-size: 100px;
+    font-size: 98px;
     line-height: 120px;
   }
 }
 @media only screen and (max-width: 575px) {
   .banner-content-wrapper-4 .title {
-    font-size: 70px;
+    font-size: 66px;
     line-height: 86px;
   }
 }
 @media only screen and (max-width: 479px) {
   .banner-content-wrapper-4 .title {
-    font-size: 58px;
+    font-size: 56px;
     line-height: 82px;
   }
 }
@@ -17222,7 +17244,9 @@ a {
 }
 
 .rts-about-area-three {
-  background: #151618;
+  background-image: url(../images/banner/16-overlayed.webp);
+  background-size: cover;
+  background-position: center;
 }
 
 .rts-btn.btn-border.radious-3 {

@@ -6,21 +6,19 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-content-wrapper-4">
-                        <h1 class="title rts_hero__title">{{$data->sections[0]->title}}</h1>
-                        <p class="disc">
-                            {{$data->sections[0]->description}}
+                        <h1 class="title rts_hero__title">{{ $data->sections[0]->title }}</h1>
+                        <p style="color: #bebaba" class="disc">
+                            {{ $data->sections[0]->description }}
                         </p>
-                        <a href="{{ asset(config('settings.youtube_previous_episodes_link', 'https://www.youtube.com/@Awikonkotv/videos')) }}" class="rts-btn btn-border radious">{{$data->sections[0]->cta->text}}<i
+                        <a href="{{ asset(config('settings.youtube_previous_episodes_link', 'https://www.youtube.com/@Awikonkotv/videos')) }}"
+                            class="rts-btn btn-border radious">{{ $data->sections[0]->cta->text }}<i
                                 class="fa-thin fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="right-image-bottom rts-reveal-one">
-            <img class="rts-reveal-image-one" src="{{$data->sections[0]->images[0]->src}}" alt="">
-        </div>
-        <div class="left-image-center rts-reveal-one">
-            <img class="rts-reveal-image-one" src="{{$data->sections[0]->images[1]->src}}" alt="">
+            <img class="rts-reveal-image-one" src="{{ $data->sections[0]->images[0]->src }}" alt="">
         </div>
     </div>
     <!-- rts banner area end -->
@@ -33,17 +31,18 @@
                     <!-- about left area start home three -->
                     <div class="about-left-three-start">
                         <div class="title-style-three-left">
-                            <span>{{$data->sections[1]->title}}</span>
+                            <span>{{ $data->sections[1]->title }}</span>
                             <h2 class="title">Yoruba Essence, <br>
                                 <span>Culture</span> Reimagined.
                             </h2>
                         </div>
-                        <p class="disc">
-                            {{$data->sections[1]->description}}
+                        <p style="color: #bebaba" class="disc">
+                            {{ $data->sections[1]->description }}
 
 
                         </p>
-                        <a href="{{route('frontend.about')}}" class="rts-btn btn-border radious-3">{{$data->sections[1]->cta->text}}<i
+                        <a href="{{ route('frontend.about') }}"
+                            class="rts-btn btn-border radious-3">{{ $data->sections[1]->cta->text }}<i
                                 class="fa-thin fa-arrow-right"></i></a>
                     </div>
                     <!-- about left area start home three end -->
@@ -51,7 +50,7 @@
                 <div class="col-lg-6 mt_md--50 mt_sm--50">
                     <!-- about style six -->
                     <div class="about-style-three-right">
-                        <img src=" {{$data->sections[1]->image}}" alt="about">
+                        <img src=" {{ $data->sections[1]->image }}" alt="about">
                     </div>
                     <!-- about style six end -->
                 </div>
@@ -76,11 +75,11 @@
                     <div class="team-style-three-wrapper">
                         <!-- single team style start -->
                         <div class="team-single-three-style">
-                            <a href="{{route('frontend.meet-the-ceo')}}" class="name-team">
+                            <a href="#" class="name-team">
                                 <span>01</span>
-                                {{$data->sections[2]->members[0]->name}}
+                                {{ $data->sections[2]->members[0]->name }}
                             </a>
-                            <span class="designation"> {{$data->sections[2]->members[0]->designation}}</span>
+                            <span class="designation"> {{ $data->sections[2]->members[0]->designation }}</span>
                             <div class="social-team-wrapper">
                                 <ul>
                                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -89,9 +88,9 @@
                                     <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
-                            <a href="team-single.html"><i class="fa-solid fa-arrow-down-right"></i></a>
+                            <a href="#"><i class="fa-solid fa-arrow-down-right"></i></a>
                             <div class="rts-hover-show-img">
-                                <img src="{{$data->sections[2]->members[0]->image}}" alt="Thumb">
+                                <img src="{{ $data->sections[2]->members[0]->image }}" alt="Thumb">
                             </div>
                         </div>
                         <!-- single team style end -->
@@ -263,13 +262,14 @@
                         </div>
                         <h2 style="font-size: 30px" class="title quote">
 
-                           On ONÍDÈMỌDÈ, Participants dive deep into Yoruba's past and present, tackling themes like education, religion,
+                            On ONÍDÈMỌDÈ, Participants dive deep into Yoruba's past and present, tackling themes like
+                            education, religion,
                             music,
                             economics, family, and belief systems. It's an engaging way to celebrate and sustain the essence
                             of Yoruba culture.</h2>
 
-                        <a href="{{route('frontend.participants.register')}}" class="rts-btn btn-border">Register as a participant<i
-                                class="fa-regular fa-arrow-right"></i></a>
+                        <a href="{{ route('frontend.participants.register') }}" class="rts-btn btn-border">Register as a
+                            participant<i class="fa-regular fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

@@ -90,7 +90,7 @@
                             </div>
                             <a href="#"><i class="fa-solid fa-arrow-down-right"></i></a>
                             <div class="rts-hover-show-img">
-                                <img src="{{ $data->sections[2]->members[0]->image }}" alt="Thumb">
+                                <img height="350" width="350" src="{{ $data->sections[2]->members[0]->image }}" alt="Thumb">
                             </div>
                         </div>
                         <!-- single team style end -->

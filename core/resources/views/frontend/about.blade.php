@@ -95,32 +95,4 @@
             </div>
         </div>
     </div>
-
-    <!-- contact area start -->
-    <div class="rts-contact-area rts-section-gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="contct-thumbnail-left rts-reveal-one">
-                        <img class="rts-reveal-image-one" src="{{$data[2]['images'][0]['src']}}" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-6 pl--60 pr--100 pr_md--10 pr_sm--10 pl_sm--10 pl_md--10 pt_md--50 pt_sm--50">
-                    <div class="easy-appoinment-area">
-                        <div class="title-left-style-seven-wrapper">
-                            <span class="pre">{{$data[2]['title']}}</span>
-                            <h2 class="title">{{$data[2]['subtitle']}}</h2>
-                        </div>
-                        <form action="#">
-                            <input type="{{$data[2]['form']['fields'][0]['type']}}" placeholder="{{$data[2]['form']['fields'][0]['placeholder']}}">
-                            <input type="{{$data[2]['form']['fields'][0]['type']}}" placeholder="{{$data[2]['form']['fields'][1]['placeholder']}}">
-                            <textarea placeholder="{{$data[2]['form']['fields'][2]['placeholder']}}"></textarea>
-                            <button class="rts-btn btn-primary">{{$data[2]['form']['button']['text']}}</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- contact area start -->
 @endsection

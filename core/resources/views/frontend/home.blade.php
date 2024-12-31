@@ -62,7 +62,7 @@
 
 
     <!-- team area start -->
-    <div class="rts-team-area rts-section-gapBottom pt--50 bg-3">
+    <div class="rts-team-area rts-section-gapBottom pt--50 meet-the-host-bg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

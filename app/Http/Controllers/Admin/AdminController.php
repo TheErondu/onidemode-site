@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Storage;
 
 class AdminController  extends Controller
 {
@@ -72,7 +71,7 @@ class AdminController  extends Controller
             $originalFileName = $file->getClientOriginalName();
 
             // Define the target path in the root/uploads folder
-            $targetPath = base_path('uploads'); // This points to the "uploads" folder in the root
+            $targetPath = public_path('uploads'); // This points to the "uploads" folder in the root
 
             // Ensure the directory exists
             if (!File::exists($targetPath)) {

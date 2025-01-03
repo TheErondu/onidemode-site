@@ -46,7 +46,7 @@ class AdminController  extends Controller
             'title' => 'Page Updated',
             'body' => 'The page ' . $page->page_name . ' has been modified by' . $user->name . '.',
             'user' => $user,
-            'cta_link ' => route('admin.pages.manage', $page),
+            'cta_link' => route('admin.pages.manage', $page),
         ];
 
         Mail::to($user->email)->queue(new GenericEmail($details));

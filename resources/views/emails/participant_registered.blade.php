@@ -11,10 +11,10 @@
 
     <p><strong>Here are your registration details:</strong></p>
     <ul>
-        <li><strong>Name:</strong> {{ $details['first_name'] }} {{ $details['last_name'] }}</li>
+        <li><strong>Name:</strong> {{ $details['first_name'] }} {{ $details['last_name'] }}.</li>
         <li><strong>Email:</strong> {{ $details['email'] }}</li>
-        <li><strong>Preferred Availability:</strong> {{ implode(', ', $details['availability'] ?? []) }}</li>
-        <li><strong>Proposed Date:</strong> {{ $details['proposed_date']->format('D, M d, Y') }}</li>
+        <li><strong>Preferred Availability:</strong> {{ implode(', ', $details['availability'] ?? []) }}.</li>
+        <li><strong>Proposed Date:</strong> {{\App\Utils\CustomFormatter::formatDate( $details['proposed_date'])}}.</li>
     </ul>
     <br>
     <p>What's next? Our team will be in touch soon with additional details about the show, including the schedule and any

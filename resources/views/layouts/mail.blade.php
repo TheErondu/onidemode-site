@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
+    <title>{{config('settings.site_name')}}</title>
     <style>
         /* Reset styles for email clients */
         body {
@@ -101,6 +102,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="email-container">
         <div class="header">
@@ -122,9 +124,11 @@
             <p>{{ config('settings.site_contact_address') }}</p>
             <p>
                 If you have any questions, please contact us at
-                <a href="mailto:{{ config('settings.site_contact_email') }}">{{ config('settings.site_contact_email') }}</a>
+                <a
+                    href="mailto:{{ config('settings.site_contact_email') }}">{{ config('settings.site_contact_email') }}</a>
             </p>
         </div>
     </div>
 </body>
+
 </html>

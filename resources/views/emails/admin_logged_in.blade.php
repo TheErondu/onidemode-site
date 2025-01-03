@@ -5,15 +5,17 @@
 
 @section('content')
     <h1>Admin Login Alert</h1>
-    <p>Dear {{ $details['admin_name'] }},</p>
+    <p>Dear {{ $details['user']['name'] }},</p>
 
     <p>This is to notify you that an admin account has successfully logged into the system. Below are the login details:</p>
 
     <ul>
-        <li><strong>Admin Name:</strong> {{ $details['admin_name'] }}</li>
-        <li><strong>Email:</strong> {{ $details['admin_email'] }}</li>
-        <li><strong>Login Time:</strong> {{ $details['login_time']->format('D, M d, Y h:i A') }}</li>
-        <li><strong>IP Address:</strong> {{ $details['ip_address'] }}</li>
+        <li><strong>Admin Name:</strong> {{ $details['user']['name'] }}</li>
+        <li><strong>Email:</strong> {{ $details['user']['email'] }}</li>
+        <li><strong>Login Time:</strong> {{ \App\Utils\CustomFormatter::formatDate($details['login_time']) }} </li>
+        @if (isset($details['session']))
+            <li><strong>IP Address:</strong> {{ $details['session']['ip_address'] }}</li>
+        @endif
     </ul>
 
     <p>If this login was not initiated by you, please contact the technical support team immediately to secure your account.</p>

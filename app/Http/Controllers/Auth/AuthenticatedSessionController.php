@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Mail\AdminLoggedIn;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
@@ -25,22 +28,27 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
-
         $request->session()->regenerate();
 
         $user = Auth::user();
 
-        $session = $user->$request->session();
+        // Fetch the latest session
+        $session = DB::table('sessions')
+            ->where('user_id', $user->id) // If user_id is stored
+            ->latest('last_activity') // Use the `last_activity` column to get the latest session
+            ->first();
 
         $details = [
             "user" => $user,
             "session" => $session,
+            "login_time" => now()->toDateTimeString(),
         ];
-
-
+        // Send an email with the session details
+        Mail::to($user->email)->queue(new AdminLoggedIn($details));
 
         return redirect()->intended(route('back-office', absolute: false));
     }
+
 
     /**
      * Destroy an authenticated session.

@@ -169,10 +169,13 @@
                     </div>
                 @endforeach
             </div>
+            <div style="padding-left: 1.7rem">
+                <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
         </div>
 
-        <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary">Save Changes</button>
+
     </form>
 </div>
 <script>

@@ -1,20 +1,26 @@
 @extends('layouts.frontend.app')
 @section('content')
     <style>
-        .video-slideshow {
-            position: relative;
-            width: 100%;
-            height: auto;
-            overflow: hidden;
+        .video-background {
+            position: relative !important;
+            overflow: hidden !important;
+            color: white;
+            min-height: 500px;
+            z-index: 0;
         }
 
-        #video-slider {
-            width: 100%;
-            height: auto;
-            display: block;
+        .background-video {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            z-index: -1 !important;
+            filter: brightness(0.3) !important;
+            /* This will darken the video */
         }
     </style>
-
     <!-- rts banner area start -->
     <div class="rts-banner-area rts-section-gap bg_banner-4 bg_image">
         <div class="container">
@@ -32,17 +38,19 @@
                 </div>
             </div>
         </div>
-        <div class="video-slideshow">
-            <video id="video-slider" autoplay muted loop playsinline>
-                <source src="{{ asset($data->sections[0]->videos[0]->src) }}" type="video/webm">
-                Your browser does not support WebM videos.
-            </video>
+        <div class="right-image-bottom rts-reveal-one">
+            <img class="rts-reveal-image-one" src="{{ $data->sections[0]->images[0]->src }}" alt="">
         </div>
     </div>
     <!-- rts banner area end -->
 
     <!-- about area -->
-    <div class="rts-about-area-three rts-section-gap">
+    <div class="rts-about-area-three rts-section-gap video-background">
+        <video class="background-video" autoplay muted loop playsinline>
+            <source src="{{ asset($data->sections[0]->videos[0]->src) }}" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -56,8 +64,6 @@
                         </div>
                         <p style="color: #bebaba" class="disc">
                             {{ $data->sections[1]->description }}
-
-
                         </p>
                         <a href="{{ route('frontend.about') }}"
                             class="rts-btn btn-border radious-3">{{ $data->sections[1]->cta->text }}<i
@@ -68,13 +74,15 @@
                 <div class="col-lg-6 mt_md--50 mt_sm--50">
                     <!-- about style six -->
                     <div class="about-style-three-right">
-                        <img src=" {{ $data->sections[1]->image }}" alt="about">
+                        <img src="{{ $data->sections[1]->image }}" alt="about">
                     </div>
                     <!-- about style six end -->
                 </div>
             </div>
         </div>
     </div>
+
+
     <!-- about area end -->
 
 
@@ -277,7 +285,7 @@
                 <div class="col-lg-12">
                     <div class="title-style-center cta-wrapper-two">
                         <div class="pre-title-area">
-                            <span style= "padding-top: 26px;font-size: 24px;" class="pre-title">Want to join the
+                            <span style= "padding-top: 40px;font-size: 30px;" class="pre-title">Want to join the
                                 show?</span>
                         </div>
                         <h5 style="font-size: 20px;" class="title quote">

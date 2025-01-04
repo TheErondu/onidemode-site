@@ -13,12 +13,13 @@
         <li><strong>Admin Name:</strong> {{ $details['user']['name'] }}</li>
         <li><strong>Email:</strong> {{ $details['user']['email'] }}</li>
         <li><strong>Login Time:</strong> {{ \App\Utils\CustomFormatter::formatDate($details['login_time']) }} </li>
-        @if (isset($details['session']))
-            <li><strong>IP Address:</strong> {{ $details['session']['ip_address'] }}</li>
-        @endif
+        <li><strong>User Agent:</strong> {{ $details['user_agent'] ?? 'N/A' }}</li>
+        <li><strong>IP Address:</strong> {{ $details['ip_address'] ?? 'N/A' }}</li>
+
     </ul>
 
-    <p>If this login was not initiated by you, please contact the technical support team immediately to secure your account.</p>
+    <p>If this login was not initiated by you, please contact the technical support team immediately to secure your account.
+    </p>
 
     <p>
         If you have any questions, please contact us at

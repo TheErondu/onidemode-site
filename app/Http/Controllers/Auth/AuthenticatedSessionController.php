@@ -40,7 +40,8 @@ class AuthenticatedSessionController extends Controller
 
         $details = [
             "user" => $user,
-            "session" => $session,
+            "ip_address" => $session->ip_address,
+            "user_agent" => $session->user_agent,
             "login_time" => now()->toDateTimeString(),
         ];
         // Send an email with the session details

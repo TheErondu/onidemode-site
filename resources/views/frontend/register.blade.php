@@ -58,7 +58,7 @@
 
 
             <!-- Form -->
-            <form action="{{ route('frontend.register.pay') }}" method="POST" class="contact-form-conatct-page">
+            <form id="paymentForm" action="{{ route('frontend.register.pay') }}" method="POST" class="contact-form-conatct-page">
                 @csrf
                 <!-- Personal Details -->
                 <h3>Personal Details</h3>

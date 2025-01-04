@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from themewant.com/products/html/innovat/index-four.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 21 Oct 2024 15:37:00 GMT -->
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +36,6 @@
 
     <!-- Preloading Resources -->
     <link rel="preload" href="{{ asset('assets/css/style.css') }}" as="style">
-    <link rel="preload" href="{{ asset('assets/js/script.js') }}" as="script">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
 

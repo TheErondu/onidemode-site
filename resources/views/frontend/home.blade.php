@@ -314,28 +314,4 @@
 
     <div id="anywhere-home">
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const videoSlider = document.getElementById('video-slider');
-            const videoSources = @json($data->sections[0]->videos);
-
-            let currentIndex = 0;
-
-            if (videoSources.length > 0) {
-                videoSlider.src = videoSources[currentIndex].src; // Set the initial video
-                videoSlider.play();
-            }
-
-            // Change video source periodically
-            setInterval(() => {
-                if (videoSources.length === 0) return;
-
-                currentIndex = (currentIndex + 1) % videoSources.length; // Cycle through sources
-                videoSlider.src = videoSources[currentIndex].src;
-                videoSlider.load(); // Reload the video to play from the start
-                videoSlider.play();
-            }, 5000); // Change video every 5 seconds
-        });
-    </script>
 @endsection

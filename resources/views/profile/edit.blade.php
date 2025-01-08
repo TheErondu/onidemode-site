@@ -31,9 +31,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <a href="{{route('admin.profile.edit')}}" class="btn btn-danger">Edit Security Settings</a>
-                </div>
             </div>
 
             <div class="col-12 col-lg-8">

@@ -10,7 +10,7 @@
                     <h1 class="display-1 text-danger">Error:{{ $exception->getStatusCode() }}</h1>
 
                     <p class="disc">
-                       Something went wrong. Please try again.'
+                        Something went wrong. Please try again.
                     </p>
                     <a style="color: black" href="{{ route('frontend.home') }}" class="rts-btn btn-border radious-3">
                         Go Back Home <i class="fa-thin fa-arrow-right"></i>

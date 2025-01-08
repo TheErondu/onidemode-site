@@ -190,7 +190,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="col-auto">
-                                                    <p class=" mb-0">{{$participant->email}}</p>
+                                                    <p class=" mb-0">{{ substr($participant->email, 0, 20) }}{{ strlen($participant->email) > 20 ? '...' : '' }}</p>
                                                 </td>
                                                 <td class="col-auto">
                                                     <p class=" mb-0">{{$participant->phone}}</p>
@@ -215,7 +215,7 @@
                             </div>
                             <div class="ms-3 name">
                                 <h5 class="font-bold">{{ \Auth::User()->name }}</h5>
-                                <h6 class="text-muted mb-0">{{ \Auth::User()->email }}</h6>
+                                <h6 class="text-muted mb-0"> {{ substr( \Auth::User()->email, 0, 15) }}{{ strlen( \Auth::User()->email) > 15 ? '...' : '' }}</h6>
                             </div>
                         </div>
                     </div>

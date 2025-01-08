@@ -3,7 +3,7 @@
         <div class="sidebar-header">
             <div class="d-flex justify-content-between">
                 <div class="logo">
-                    <a href="{{ route('back-office') }}">
+                    <a href="{{ route('admin.back-office') }}">
                         <img width="200px" height="150px" src="{{ asset('assets/images/logo/ONIDEMODE.webp') }}" alt="Logo">
                     </a>
                 </div>
@@ -18,7 +18,7 @@
 
                 <!-- Dashboard -->
                 <li class="sidebar-item {{ request()->routeIs('back-office') ? 'active' : '' }}">
-                    <a href="{{ route('back-office') }}" class="sidebar-link">
+                    <a href="{{ route('admin.back-office') }}" class="sidebar-link">
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
@@ -66,10 +66,10 @@
                 </li>
 
                 <!-- Users -->
-                <li class="sidebar-item {{ request()->routeIs('admin.settings.users.index') ? 'active' : '' }}">
-                    <a href="{{ route('admin.settings.users.index') }}" class="sidebar-link">
-                        <i class="bi bi-grid-1x2-fill"></i>
-                        <span>Users</span>
+                <li class="sidebar-item {{ request()->routeIs('admin.profile.edit') ? 'active' : '' }}">
+                    <a href="{{ route('admin.profile.edit') }}" class="sidebar-link">
+                        <i class="iconly-boldProfile"></i>
+                        <span>Admin Profile</span>
                     </a>
                 </li>
 

@@ -42,7 +42,7 @@ class AuthenticatedSessionController extends Controller
         // Send an email with the session details
         Mail::to($user->email)->queue(new AdminLoggedIn($details));
 
-        return redirect()->intended(route('back-office', absolute: false));
+        return redirect()->intended(route('admin.back-office', absolute: false));
     }
 
 

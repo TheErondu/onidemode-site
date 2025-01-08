@@ -25,7 +25,7 @@ Route::get('/payment/callback', [PaymentsController::class, 'handleGatewayCallba
 Route::middleware('auth')->group(function () {
     Route::get('/back-office', function () {
         return view('admin.home');
-    })->name('back-office');
+    })->name('admin.back-office');
 
     Route::put('/back-office/pages/manage/update/{page}', [AdminController::class, 'updatePage'])->name('admin.pages.manage.update');
     Route::get('/back-office/pages/manage/{page}', [AdminController::class, 'managePage'])->name('admin.pages.manage');
@@ -35,9 +35,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/back-office/payments/', [PaymentsController::class, 'index'])->name('admin.payments.manage');
     Route::resource('/back-office/users', UserController::class)->names('admin.settings.users');
     Route::resource('/back-office/participants', ParticipantController::class)->names('admin.settings.participants');
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('back-office/profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
+    Route::patch('back-office/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
+    Route::delete('back-office/profile', [ProfileController::class, 'destroy'])->name('admin.profile.destroy');
 });
 
 require __DIR__ . '/auth.php';

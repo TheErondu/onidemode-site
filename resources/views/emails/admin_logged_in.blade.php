@@ -13,8 +13,6 @@
         <li><strong>Admin Name:</strong> {{ $details['user']['name'] }}</li>
         <li><strong>Email:</strong> {{ $details['user']['email'] }}</li>
         <li><strong>Login Time:</strong> {{ \App\Utils\CustomFormatter::formatDate($details['login_time']) }} </li>
-        <li><strong>User Agent:</strong> {{ $details['user_agent'] ?? 'N/A' }}</li>
-        <li><strong>IP Address:</strong> {{ $details['ip_address'] ?? 'N/A' }}</li>
 
     </ul>
 

@@ -33,15 +33,10 @@ class AuthenticatedSessionController extends Controller
         $user = Auth::user();
 
         // Fetch the latest session
-        $session = DB::table('sessions')
-            ->where('user_id', $user->id) // If user_id is stored
-            ->latest('last_activity') // Use the `last_activity` column to get the latest session
-            ->first();
+        $session =  $request->session()->all();
 
         $details = [
             "user" => $user,
-            "ip_address" => $session->ip_address,
-            "user_agent" => $session->user_agent,
             "login_time" => now()->toDateTimeString(),
         ];
         // Send an email with the session details

@@ -10,7 +10,9 @@ use App\Http\Controllers\Admin\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('frontend.home');
-
+Route::get('/error/test/{code}', function ($code) {
+    abort((int) $code);
+});
 Route::get('/about', [PageController::class, 'about'])->name('frontend.about');
 Route::get('/meet-the-ceo', [PageController::class, 'meet_the_ceo'])->name('frontend.meet-the-ceo');
 Route::get('/contact-us', [PageController::class, 'contact_us'])->name('frontend.contact');

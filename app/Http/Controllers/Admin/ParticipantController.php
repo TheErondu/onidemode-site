@@ -110,6 +110,6 @@ class ParticipantController extends Controller
         $participant = Participant::findOrFail($id);
         $participant->delete();
 
-        return redirect()->route('admin.participants.index')->with('message', 'Participant deleted successfully.');
+        return redirect()->route('admin.settings.participants.index')->with('message', 'Participant deleted successfully.');
     }
 }

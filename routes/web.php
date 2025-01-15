@@ -7,11 +7,25 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Admin\ParticipantController;
 use App\Http\Controllers\Admin\ProfileController;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'home'])->name('frontend.home');
 Route::get('/error/test/{code}', function ($code) {
     abort((int) $code);
+});
+Route::get('/send-mail', function () {
+    try {
+        // Send email with inline dummy data
+        Mail::to('admin@onidemodegameshow.com')->send(new \App\Mail\TestMail([
+            'subject' => 'Test Email Subject',
+            'message' => 'This is a test message sent via Laravel.'
+        ]));
+
+        return response()->json(['status' => 'success', 'message' => 'Email sent successfully']);
+    } catch (\Exception $e) {
+        return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
+    }
 });
 Route::get('/about', [PageController::class, 'about'])->name('frontend.about');
 Route::get('/meet-the-ceo', [PageController::class, 'meet_the_ceo'])->name('frontend.meet-the-ceo');

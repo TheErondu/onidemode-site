@@ -21,7 +21,7 @@
     <!-- Breadcrumb Area End -->
 
     <!-- Registration Form Section Start -->
-    <div class="contact-info-area-start rts-section-gapTop">
+    <div style="padding: 9%" class="contact-info-area-start rts-section-gapTop">
         <div class="container">
             <div class="row">
                 <div class="center col-lg-12 text-center mb-5">
@@ -49,8 +49,10 @@
                             with a rich and personalized game experience, we require the information you provide during
                             registration. This ensures we can tailor the event to your unique skills and interests.
                             <br>
-                            A registration fee of <strong> ₦1,000</strong> is required to confirm your participation. We look forward to
-                            having you join us and showcasing your expertise in Yoruba heritage!</p>
+                            A registration fee of  <strong>{{ config('settings.participant_registration_fee', '') }}</strong> is required to confirm your participation. We
+                            look forward to
+                            having you join us and showcasing your expertise in Yoruba heritage!
+                        </p>
                     </div>
 
                 </div>
@@ -58,7 +60,8 @@
 
 
             <!-- Form -->
-            <form id="paymentForm" action="{{ route('frontend.register.pay') }}" method="POST" class="contact-form-conatct-page">
+            <form id="paymentForm" action="{{ route('frontend.register.pay') }}" method="POST"
+                class="contact-form-conatct-page">
                 @csrf
                 <!-- Personal Details -->
                 <h3>Personal Details</h3>
@@ -188,13 +191,7 @@
                             <option value="No">No</option>
                         </select>
                     </div>
-                    <div class="col-lg-12">
-                        <label class="label-compact">Do you agree to follow the rules and guidelines?</label>
-                        <select class="select-dropdown" name="rules_agreement" required>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
+
                 </div>
 
                 <!-- Submit -->
@@ -205,4 +202,127 @@
         </div>
     </div>
 
+
+    <!-- Terms Modal -->
+    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+
+                <!-- Header -->
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsLabel">Terms & Conditions</h5>
+                </div>
+
+                <!-- Body -->
+                <div class="modal-body" style="max-height:70vh; overflow-y:auto; font-size:14px;">
+                    <div class="container">
+                        <p><strong>
+                                These Terms and Conditions (“Terms”) govern participation in the ONIDEMODE "GAME SHOW",
+                                organized by Awikonko Tv. By registering and participating, you (“Participant”) agree to be
+                                bound by the following:
+                            </strong></p>
+
+                        <h6>1. Eligibility</h6>
+                        <p>1.1. Participants must be at least 18 years of age or have parental/guardian consent if underage.
+                        </p>
+                        <p>1.2. Participants must have completed the online registration and paid the non-refundable
+                            participation fee.</p>
+                        <p>1.3. Employees, affiliates, and immediate family members of the organizing body are not eligible
+                            to participate.</p>
+
+                        <h6>2. Registration and Participation Fee</h6>
+                        <p>2.1. All participants must complete the online registration form via the official platform.</p>
+                        <p>2.2. A participation fee of ₦5000 must be paid upon registration to confirm participation.</p>
+                        <p>2.3. The fee is non-refundable, regardless of withdrawal, disqualification, or failure to
+                            participate.</p>
+                        <p>2.4. Proof of payment may be requested at any time during the process.</p>
+
+                        <h6>3. Game Format</h6>
+                        <p>3.1. The Game consists of two (2) main segments:</p>
+                        <ul>
+                            <li><strong>Objective Segment:</strong> 10 compulsory multiple-choice questions.</li>
+                            <li><strong>Theory Segment:</strong> Open-ended questions which may follow the objective
+                                segment.</li>
+                        </ul>
+                        <p>3.2. During the Objective Segment, participants must answer each of the 10 questions within the
+                            given time.</p>
+                        <p>3.3. If a participant cannot answer, they may let the host answer. In such cases:</p>
+                        <ul>
+                            <li>The winning value is split 50/50 between participant and host.</li>
+                            <li>The participant is credited with half the points.</li>
+                        </ul>
+                        <p>3.4. After completing objective questions, the participant may end the game or proceed to the
+                            Theory Segment.</p>
+                        <p>3.5. Organizers reserve the right to modify the rules or structure at any time.</p>
+
+                        <h6>4. Prizes</h6>
+                        <p>4.1. Winners will receive advertised prizes.</p>
+                        <p>4.2. Prizes are non-transferable and not exchangeable for cash.</p>
+                        <p>4.3. Taxes/charges are the sole responsibility of winners.</p>
+                        <p>4.4. Failure to comply may lead to disqualification.</p>
+
+                        <h6>5. Disqualification</h6>
+                        <ul>
+                            <li>Providing false information</li>
+                            <li>Using unauthorized materials</li>
+                            <li>Disruptive or inappropriate behavior</li>
+                            <li>Breaching any part of these Terms</li>
+                        </ul>
+
+                        <h6>6. Intellectual Property</h6>
+                        <p>6.1. All content remains the property of the Organizers.</p>
+                        <p>6.2. Participants grant Organizers the right to use names, images, and recordings for promotions.
+                        </p>
+
+                        <h6>7. Limitation of Liability</h6>
+                        <p>7.1. Organizers are not liable for damages, losses, or injuries from participation.</p>
+                        <p>7.2. Game is provided “as is” without warranties.</p>
+
+                        <h6>8. Data Privacy</h6>
+                        <p>8.1. Personal information will be used only for the Game.</p>
+                        <p>8.2. Data will not be shared except as required by law.</p>
+
+                        <h6>9. Governing Law</h6>
+                        <p>These Terms shall be governed by the laws of Nigeria, with disputes under the jurisdiction of the
+                            High Court of Osun State.</p>
+
+                        <h6>10. Acceptance</h6>
+                        <p>By registering and paying, you confirm that you have read, understood, and agreed to abide by
+                            these Terms and Conditions.</p>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="modal-footer">
+                    <button type="button" id="confirmTerms" class="rts-btn btn-primary">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
+
+@push('scripts')
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+             var hasAcceptedTerms = false;
+            const modalElement = document.getElementById('termsModal');
+            if (modalElement) {
+                // Create modal instance
+                const termsModal = new bootstrap.Modal(modalElement, {
+                    backdrop: 'static',
+                    keyboard: false
+                });
+
+                // Show modal after page load
+                termsModal.show();
+
+                // Confirm logic
+                document.getElementById('confirmTerms').addEventListener('click', function() {
+
+                    termsModal.hide();
+                });
+            }
+        });
+    </script>
+@endpush

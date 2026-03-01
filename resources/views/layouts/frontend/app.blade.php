@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/vendor/metismenu.css') }}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-
+    @stack('styles')
     <!-- Schema.org for SEO -->
     <script type="application/ld+json">
         {
@@ -74,6 +74,7 @@
     @include('layouts.frontend.header')
     @yield('content')
     @include('layouts.frontend.footer')
+    @stack('scripts')
     <!-- scripts -->
     <script src="{{asset('assets/js/vendor/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/plugins/scrolltoplugin.js')}}"></script>

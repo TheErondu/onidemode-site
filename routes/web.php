@@ -36,7 +36,8 @@ Route::post('/register/pay', [PaymentsController::class, 'redirectToGateway'])->
 Route::get('/payment/callback', [PaymentsController::class, 'handleGatewayCallback'])->name('payment.callback');
 
 /// Backoffice Routes
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
+    
     Route::get('/back-office', function () {
         return view('admin.home');
     })->name('admin.back-office');

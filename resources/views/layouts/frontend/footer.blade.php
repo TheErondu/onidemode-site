@@ -11,14 +11,14 @@
                                 </a>
                                 <!-- social style two -->
                                 <ul class="social-style-two-wrapper social-anim">
-                                    <li><a class="counter__anim" href="{{ config('settings.facebook_page') }}"><i
+                                    <li><a class="counter__anim" href="{{ config('settings.facebook_page', 'https://www.facebook.com/AwikonkoTv') }}"><i
                                                 class="fa-brands fa-facebook-f"></i></a>
                                     </li>
-                                    <li><a class="counter__anim" href="{{ config('settings.twitter_handle') }}"><i class="fa-brands fa-twitter"></i></a>
+                                    <li><a class="counter__anim" href="{{ config('settings.twitter_handle', 'https://x.com/AwikonkoTv') }}"><i class="fa-brands fa-twitter"></i></a>
                                     </li>
-                                    <li><a class="counter__anim" href="{{ config('settings.youtube_previous_episodes_link') }}"><i class="fa-brands fa-youtube"></i></a>
+                                    <li><a class="counter__anim" href="{{ config('settings.youtube_previous_episodes_link', 'https://www.youtube.com/@Authenticyorubatv/videos') }}"><i class="fa-brands fa-youtube"></i></a>
                                     </li>
-                                    <li><a class="counter__anim" href="{{ config('settings.linkedin_profile') }}"><i
+                                    <li><a class="counter__anim" href="{{ config('settings.linkedin_profile', '#') }}"><i
                                                 class="fa-brands fa-linkedin-in"></i></a>
                                     </li>
                                 </ul>
@@ -28,16 +28,16 @@
                                 <h6 class="title">Our Address</h6>
                                 <div class="address">
                                     <a href="#">
-                                        {{ config('settings.site_contact_address') }}
+                                        {{ config('settings.site_contact_address', '123 Yoruba Heritage Avenue, Lagos, Nigeria') }}
                                     </a>
                                 </div>
                             </div>
                             <div class="single-wized right-center">
                                 <h6 class="title">Contact</h6>
                                 <div class="contact-call">
-                                    <a href="tel:{{ config('settings.site_contact_phone') }}">{{ config('settings.site_contact_phone') }}
+                                    <a href="tel:{{ config('settings.site_contact_phone', '+2349048519362') }}">{{ config('settings.site_contact_phone', '+2349048519362') }}
                                     </a>
-                                    <a href="mailto:{{ config('settings.site_contact_email') }}">{{ config('settings.site_contact_email') }}
+                                    <a href="mailto:{{ config('settings.site_contact_email', 'info@onidemodegameshow.com') }}">{{ config('settings.site_contact_email', 'info@onidemodegameshow.com') }}
                                     </a>
                                 </div>
                             </div>

@@ -55,13 +55,29 @@ class SettingController extends Controller
      */
     public function update(Request $request)
     {
-        $data = $request->input('settings', []);
+        $imageKeys = ['site_logo', 'site_favicon', 'og_image'];
 
+        // Save all non-image text settings
+        $data = $request->input('settings', []);
         foreach ($data as $key => $value) {
             Setting::where('key', $key)->update(['value' => $value]);
         }
 
-        // Clear the config cache
+        // Handle image uploads
+        foreach ($imageKeys as $key) {
+            if ($request->hasFile("images.{$key}") && $request->file("images.{$key}")->isValid()) {
+                $file = $request->file("images.{$key}");
+                $filename = $key . '.' . $file->getClientOriginalExtension();
+
+                if (!file_exists(public_path('uploads/settings'))) {
+                    mkdir(public_path('uploads/settings'), 0775, true);
+                }
+
+                $file->move(public_path('uploads/settings'), $filename);
+                Setting::where('key', $key)->update(['value' => 'uploads/settings/' . $filename]);
+            }
+        }
+
         Artisan::call('config:clear');
 
         return redirect()->back()->with('message', 'Settings updated successfully.');

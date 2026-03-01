@@ -1,2 +1,29 @@
 User-agent: *
-Disallow:
+
+# Public frontend - allow
+Allow: /
+Allow: /about
+Allow: /meet-the-ceo
+Allow: /contact-us
+Allow: /participants/register
+
+# Admin & backoffice
+Disallow: /back-office/
+
+# Auth routes
+Disallow: /login
+Disallow: /register
+Disallow: /logout
+Disallow: /forgot-password
+Disallow: /reset-password/
+Disallow: /verify-email/
+Disallow: /confirm-password
+Disallow: /password
+
+# Payment & internal routes
+Disallow: /payment/
+Disallow: /register/pay
+Disallow: /send-mail
+Disallow: /error/
+
+Sitemap: https://onidemodegameshow.com/sitemap.xml

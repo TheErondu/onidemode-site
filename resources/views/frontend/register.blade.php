@@ -49,7 +49,7 @@
                             with a rich and personalized game experience, we require the information you provide during
                             registration. This ensures we can tailor the event to your unique skills and interests.
                             <br>
-                            A registration fee of  <strong>{{ config('settings.participant_registration_fee', '') }}</strong> is required to confirm your participation. We
+                            A registration fee of  <strong>₦{{ config('settings.participant_registration_fee', '') }}</strong> is required to confirm your participation. We
                             look forward to
                             having you join us and showcasing your expertise in Yoruba heritage!
                         </p>
@@ -232,7 +232,7 @@
 
                         <h6>2. Registration and Participation Fee</h6>
                         <p>2.1. All participants must complete the online registration form via the official platform.</p>
-                        <p>2.2. A participation fee of ₦5000 must be paid upon registration to confirm participation.</p>
+                        <p>2.2. A participation fee of ₦{{ config('settings.participant_registration_fee', '') }} must be paid upon registration to confirm participation.</p>
                         <p>2.3. The fee is non-refundable, regardless of withdrawal, disqualification, or failure to
                             participate.</p>
                         <p>2.4. Proof of payment may be requested at any time during the process.</p>

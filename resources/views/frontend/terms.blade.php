@@ -77,7 +77,7 @@
 
       2. Registration and Participation Fee
       2.1. All participants must complete the online registration form via the official platform.
-      2.2. A participation fee of #5000 must be paid upon registration to confirm participation.
+      2.2. A participation fee of {{ config('settings.participant_registration_fee', '') }} must be paid upon registration to confirm participation.
       2.3. The fee is non-refundable, regardless of withdrawal, disqualification, or failure to participate.
       2.4. Proof of payment may be requested at any time during the process.
 

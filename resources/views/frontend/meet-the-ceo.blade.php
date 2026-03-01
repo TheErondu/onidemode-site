@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="thumbnail-left-team-about">
-                        <img src="{{ $data[0]['images'][0]['src'] }}" alt="team">
+                        <img src="{{ asset('assets/images/banner/awikonko.webp') }}" alt="team">
                     </div>
                 </div>
                 <div class="col-lg-6 pl--60 pl_md--15 pl_sm--15 mt_sm--50 mt_md--50">
@@ -36,12 +36,12 @@
                         <div class="title-style-left">
                             <div class="pre-title-area">
                                 <img src="assets/images/about/02.png" alt="about">
-                                <span class="pre-title"> {{ $data[0]['profile']['education']['institution'] }}</span>
+                                <span class="pre-title">NCE - English / Yoruba</span>
                             </div>
-                            <h2 class="title"> {{ $data[0]['profile']['name'] }}</h2>
+                            <h2 class="title">Ọ̀gbẹ́ni Adeoye Abefe Owolabi (Awíkonko)</h2>
                         </div>
                         <p class="disc">
-                            {{ $data[0]['profile']['description'] }}
+                            The Host Ọ̀gbẹ́ni Adeoye Abefe Owolabi (Awíkonko) is a seasoned, tested and professional broadcaster, voice coach, Ewi Xponent, a communicator, An Orator, and On-Air Media Personality from the biggest radio stations across South West, Cable TV and Online Radio/TV.
                         </p>
                         <!-- team contact info area and experience -->
                         <div class="team-contact-info-about">
@@ -59,7 +59,7 @@
                                 <div class="info">
                                     <h6 class="title">Education</h6>
                                     <p class="disc">
-                                        {{ $data[0]['profile']['education']['degree'] }}
+                                        An NCE holder of English / Yoruba
                                     </p>
                                 </div>
                             </div>
@@ -95,8 +95,8 @@
                                 </svg>
                                 <div class="info">
                                     <h6 class="title">Phone Number:</h6>
-                                    <a href="tel:+4733378901" class="disc">
-                                        {{ $data[0]['profile']['contact']['phone'] }}</a>
+                                    <a href="tel:+2349048519362" class="disc">
+                                        +234 904 851 9362</a>
                                 </div>
                             </div>
                             <!-- single contact  info end -->
@@ -110,8 +110,8 @@
                                 </svg>
                                 <div class="info">
                                     <h6 class="title">Email Address:</h6>
-                                    <a href="mailto:{{ $data[0]['profile']['contact']['email'] }}" class="disc">
-                                        {{ $data[0]['profile']['contact']['email'] }}
+                                    <a href="mailto:awikonkotv@gmail.com" class="disc">
+                                        awikonkotv@gmail.com
                                     </a>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                                 <div class="info">
                                     <h6 class="title">Location:</h6>
                                     <p class="disc">
-                                        {{ $data[0]['profile']['contact']['location'] }}
+                                        Ile-Ife, Osun State.
                                     </p>
                                 </div>
                             </div>
@@ -144,16 +144,11 @@
                             <p class="follow">Follow Me :</p>
                             <div class="social-team-one">
                                 <ul>
-                                    <li><a href="{{ $data[0]['profile']['socialMedia']['facebook'] }}"><i
-                                                class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="{{ $data[0]['profile']['socialMedia']['x'] }}"><i
-                                                class="fab fa-twitter"></i></a></li>
-                                    <li><a href="{{ $data[0]['profile']['socialMedia']['youtube'] }}"><i
-                                                class="fab fa-youtube"></i></a></li>
-                                    <li><a href="{{ $data[0]['profile']['socialMedia']['instagram'] }}"><i
-                                                class="fab fa-instagram"></i></a></li>
-                                    <li><a href="{{ $data[0]['profile']['socialMedia']['linkedin'] }}"><i
-                                                class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                         </div>

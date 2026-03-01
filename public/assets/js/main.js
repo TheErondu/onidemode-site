@@ -331,7 +331,7 @@
                 var sliderThumbnail = new Swiper(".swiper-banner-thumb-5", {
                     slidesPerView: 3,
                     speed: 1000,
-                    autoplay: 
+                    autoplay:
                     {
                       delay: 2000,
                     },
@@ -343,10 +343,10 @@
                         mousewheelControl: true,
                         keyboardControl: true,
                     },
-                    
+
                     // effect:"fade",
                     speed: 500,
-                    autoplay: 
+                    autoplay:
                     {
                       delay: 2000,
                     },
@@ -466,7 +466,7 @@
                       el: ".swiper-pagination",
                       clickable: true,
                     },
-                    autoplay: 
+                    autoplay:
                     {
                       delay: 2000,
                     },
@@ -505,7 +505,7 @@
                         nextEl: ".swiper-button-next",
                         prevEl: ".swiper-button-prev",
                     },
-                    autoplay: 
+                    autoplay:
                     {
                       delay: 1500,
                     },
@@ -516,7 +516,7 @@
                 var swiper = new Swiper(".mySwiper-varticle-portfolio", {
                     slidesPerView: 4,
                     spaceBetween: 20,
-                    autoplay: 
+                    autoplay:
                     {
                       delay: 2500,
                     },
@@ -748,9 +748,9 @@
             window.addEventListener("load", function() {
                 $(document).ready(function () {
                     gsap.registerPlugin(ScrollTrigger);
-    
+
                     let revealContainers = document.querySelectorAll(".rts-reveal-one");
-    
+
                     revealContainers.forEach((container) => {
                         let image = container.querySelector(".rts-reveal-image-one");
                         let rts = gsap.timeline({
@@ -761,7 +761,7 @@
                                 end: "top 0%",
                             }
                         });
-    
+
                         rts.set(container, {
                             autoAlpha: 1
                         });
@@ -785,7 +785,6 @@
             $(window).scroll(function () {
                 if ($(this).scrollTop() > 250) {
                     var bars = document.querySelectorAll('.meter > span');
-                    console.clear();
                     setInterval(function () {
                         bars.forEach(function (bar) {
                             var getWidth = parseFloat(bar.dataset.progress);
@@ -1006,16 +1005,16 @@
         },
         afterBefore: function(){
             $(document).ready(function() {
-	
+
                 if ($(".comparison-slider")[0]) {
                     let compSlider = $(".comparison-slider");
-                
+
                     compSlider.each(function() {
                         let compSliderWidth = $(this).width() + "px";
                         $(this).find(".resize img").css({ width: compSliderWidth });
                         drags($(this).find(".divider"), $(this).find(".resize"), $(this));
                     });
-            
+
                     $(window).on("resize", function() {
                         let compSliderWidth = compSlider.width() + "px";
                         compSlider.find(".resize img").css({ width: compSliderWidth });
@@ -1023,7 +1022,7 @@
                 }
             });
             function drags(dragElement, resizeElement, container) {
-                
+
                 let touched = false;
                 window.addEventListener('touchstart', function() {
                     touched = true;
@@ -1031,9 +1030,9 @@
                 window.addEventListener('touchend', function() {
                     touched = false;
                 });
-                
+
                 dragElement.on("mousedown touchstart", function(e) {
-                        
+
                         dragElement.addClass("draggable");
                         resizeElement.addClass("resizable");
                         //create vars
@@ -1044,53 +1043,53 @@
                         let containerWidth = container.outerWidth();
                         let minLeft = containerOffset + 10;
                         let maxLeft = containerOffset + containerWidth - dragWidth - 10;
-                        
+
                         dragElement.parents().on("mousemove touchmove", function(e) {
-                            
+
                             if ( touched === false ) {
                                 e.preventDefault();
                             }
-                            
+
                             let moveX = e.pageX ? e.pageX : e.originalEvent.touches[0].pageX;
                             let leftValue = moveX + posX - dragWidth;
-            
+
                             if (leftValue < minLeft) {
                                 leftValue = minLeft;
                             } else if (leftValue > maxLeft) {
                                 leftValue = maxLeft;
                             }
-            
+
                             let widthValue = (leftValue + dragWidth / 2 - containerOffset) * 100 / containerWidth + "%";
-            
+
                             $(".draggable").css("left", widthValue).on("mouseup touchend touchcancel", function() {
                                 $(this).removeClass("draggable");
                                 resizeElement.removeClass("resizable");
                             });
-                            
+
                             $(".resizable").css("width", widthValue);
-                            
+
                         }).on("mouseup touchend touchcancel", function() {
                             dragElement.removeClass("draggable");
                             resizeElement.removeClass("resizable");
-                            
+
                         });
-                    
+
                     }).on("mouseup touchend touchcancel", function(e) {
                         dragElement.removeClass("draggable");
                         resizeElement.removeClass("resizable");
-                    
+
                     });
-                
+
             }
-            
-            
+
+
         },
         bannerFourGsapAnimation: function(){
             let rtsHero = gsap.timeline()
 
             let heading_title = new SplitText(".banner-title-3", { type: "chars" })
             let heading_char = heading_title.chars
-          
+
             rtsHero.from(heading_char, {
               rotate: 20,
               ease: "back.out",
@@ -1100,7 +1099,7 @@
             })
 
         },
-        
+
         preloaderWithBannerActivation: function () {
             function checkAndStartAnimation() {
                 // Check if the class you're looking for exists on the body
@@ -1136,10 +1135,10 @@
                   setTimeout(checkAndStartAnimation, 500);
                 }
               }
-              
+
               // Call the function to start checking for the class
               checkAndStartAnimation();
-      
+
         },
 
         portfolioimgChangeHover_bg: function () {
@@ -1271,7 +1270,7 @@
         backToTopInit: function () {
             $(document).ready(function () {
               "use strict";
-      
+
               var progressPath = document.querySelector('.progress-wrap path');
               var pathLength = progressPath.getTotalLength();
               progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
@@ -1303,30 +1302,30 @@
                 }, duration);
                 return false;
               })
-      
-      
+
+
             });
-      
+
         },
         textTitleAnimation__1: function () {
             if (window.innerWidth > 550) {
-      
+
               const quotes = document.querySelectorAll(".quote");
               const quotes2 = document.querySelectorAll(".quote-2");
-      
+
               function setupSplits() {
                 $(document).ready(function () {
                   $(".split-line").wrap('<div class="split-parent"></div>');
                 });
-      
-      
+
+
                 quotes.forEach(quote => {
-      
+
                   quote.split = new SplitText(quote, {
                     type: "lines,words,chars",
                     linesClass: "split-line"
                   });
-      
+
                   // Set up the anim
                   quote.anim = gsap.from(quote.split.lines, {
                     scrollTrigger: {
@@ -1341,15 +1340,15 @@
                     stagger: 0.2,
                   });
                 });
-      
-      
-      
+
+
+
                 quotes2.forEach(quote2 => {
-      
+
                   quote2.split = new SplitText(quote2, {
                     type: "lines"
                   });
-      
+
                   // Set up the anim
                   quote2.anim = gsap.from(quote2.split.lines, {
                     scrollTrigger: {
@@ -1366,13 +1365,13 @@
                   });
                 });
               }
-      
+
               // ScrollTrigger.addEventListener("refresh", setupSplits);
               setupSplits();
             }
-      
-      
-      
+
+
+
         },
         searchOpton:function(){
             $(document).on('click', '#search', function () {
@@ -1409,7 +1408,7 @@
                     scrub: true,
                 }
             })
-            
+
             gsap.from(".rts-copyright-anim", {
                 y: -500,
                 scrollTrigger: {
@@ -1429,7 +1428,7 @@
                     markers: false
                   }
                 });
-      
+
                 rts_SkewInUp.from(this, {
                   duration: 2,
                   skewY: 2,
@@ -1487,14 +1486,14 @@
         OnePagesmoothScroll: function (e) {
             $(document).on('click', '.onepage a[href^="#"]', function (event) {
                 event.preventDefault();
-            
+
                 $('html, body').animate({
                     scrollTop: $($.attr(this, 'href')).offset().top
                 }, 2000);
             });
             $(document).on('click', 'a.scroll-down', function (event) {
                 event.preventDefault();
-            
+
                 $('html, body').animate({
                     scrollTop: $($.attr(this, 'href')).offset().top
                 }, 2000);
@@ -1503,8 +1502,8 @@
 
         preloader:function(){
             window.addEventListener('load',function(){
-              document.querySelector('body').classList.add("loaded")  
-            });          
+              document.querySelector('body').classList.add("loaded")
+            });
         },
 
 

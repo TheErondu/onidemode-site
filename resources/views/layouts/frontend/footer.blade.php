@@ -64,7 +64,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="copyright-3">
-                        <p>Copyright 2023. All Rights Reserved.</p>
+                        <p>Copyright {{ date('Y') }}. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

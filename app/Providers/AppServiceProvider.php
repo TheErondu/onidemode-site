@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use App\Models\Setting;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
@@ -23,12 +22,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        try {
+            $settings = Setting::pluck('value', 'key')->toArray();
 
-        $settings = Setting::pluck('value', 'key')->toArray();
-
-        if (!empty($settings)) {
-            Config::set('settings', $settings);
-            Artisan::call('config:clear'); // Clear the config cache to apply changes
+            if (!empty($settings)) {
+                Config::set('settings', $settings);
+            }
+        } catch (\Exception $e) {
+            // Settings table may not exist yet (e.g., during initial migration)
         }
     }
 }

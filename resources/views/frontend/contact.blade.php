@@ -32,7 +32,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="top">
-                        <h2 class="title">{{$data[0]['title']}}</h2>
+                        <h2 class="title">Contact Us</h2>
                     </div>
                 </div>
             </div>
@@ -40,12 +40,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="left-contact">
                         <p class="top mb--30">
-                            {{$data[0]['subtitle']}}
+                            Please feel free to reach out to us
                         </p>
                         <p class="disc mb--20">
-                            {{$data[0]['description'][0]}}
+                            For Advert &amp; Sponsorship On My Channels /Facebook Page: Awikonko Tv /Instagram ' Awíkonko Tv /Twitter' Awíkonko Tv And Others
                         </p>
-                        <a href="#">Hot Line: {{$data[0]['phone']}}</a>
+                        <a href="#">Hot Line: +2349048519362</a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 pl--50 pl_md--15 pl_sm--15">
@@ -54,19 +54,19 @@
                         <div class="single-information mt--30">
                             <span>Address:</span>
                             <p class="address" style="text-decoration: underline;">
-                                {{$data[0]['address']}}
+                                Awikonko Tv
                             </p>
                         </div>
                         <div class="single-information">
                             <span>Phone:</span>
-                            <a href="Tel:123-456-7890">
-                                {{$data[0]['phone']}}
+                            <a href="tel:+2349048519362">
+                                +2349048519362
                             </a>
                         </div>
                         <div class="single-information">
                             <span>Mail:</span>
-                            <a href="mailto:{{$data[0]['email']}}">
-                                {{$data[0]['email']}}
+                            <a href="mailto:akandaoro@gmail.com">
+                                akandaoro@gmail.com
                             </a>
                         </div>
                     </div>

@@ -27,19 +27,19 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner-content-wrapper-4">
-                        <h1 class="title rts_hero__title">{{ $data->sections[0]->title }}</h1>
+                        <h1 class="title rts_hero__title">ONÍDÈMỌDÈ</h1>
                         <p style="color: #bebaba" class="disc">
-                            {{ $data->sections[0]->description }}
+                            Step into the world of Yoruba heritage, where language, history, and traditions come alive. At ONÍDÈMỌDÈ, we honor the timeless beauty of Yoruba life by showcasing its wisdom, culture, and artistic brilliance to the world.
                         </p>
-                        <a href="{{ config('settings.youtube_previous_episodes_link', 'https://www.youtube.com/@Awikonkotv/videos') }}"
-                            class="rts-btn btn-border radious">{{ $data->sections[0]->cta->text }}<i
+                        <a href="https://www.youtube.com/@Authenticyorubatv/videos"
+                            class="rts-btn btn-border radious">See Recent Episodes<i
                                 class="fa-thin fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="right-image-bottom rts-reveal-one">
-            <img class="rts-reveal-image-one" src="{{ $data->sections[0]->images[0]->src }}" alt="">
+            <img class="rts-reveal-image-one" src="{{ asset('assets/images/banner/16.webp') }}" alt="">
         </div>
     </div>
     <!-- rts banner area end -->
@@ -47,7 +47,7 @@
     <!-- about area -->
     <div class="rts-about-area-three rts-section-gap video-background">
         <video class="background-video" autoplay muted loop playsinline>
-            <source src="{{ asset($data->sections[0]->videos[0]->src) }}" type="video/webm">
+            <source src="{{ asset('uploads/slide_1.webm') }}" type="video/webm">
             Your browser does not support the video tag.
         </video>
 
@@ -57,16 +57,16 @@
                     <!-- about left area start home three -->
                     <div class="about-left-three-start">
                         <div class="title-style-three-left">
-                            <span>{{ $data->sections[1]->title }}</span>
+                            <span>ABOUT ONÍDÈMỌDÈ</span>
                             <h2 class="title">Yoruba Essence, <br>
                                 <span>Culture</span> Reimagined.
                             </h2>
                         </div>
                         <p style="color: #bebaba" class="disc">
-                            {{ $data->sections[1]->description }}
+                            ONÍDÈMỌDÈ is purely about the language, culture, heritage, traditions, and life of the Yoruba-speaking people. A well cultural, entertaining Game Show that was created and innovated with new methods and ideas to introduce to the whole world, the beautiful and unique culture, language, tradition, and life of the Yoruba people of West Africa. We will engage contestants on Yoruba history, language, culture, education, religion, family, economics, music, literature, belief system, etc.
                         </p>
                         <a href="{{ route('frontend.about') }}"
-                            class="rts-btn btn-border radious-3">{{ $data->sections[1]->cta->text }}<i
+                            class="rts-btn btn-border radious-3">About Us<i
                                 class="fa-thin fa-arrow-right"></i></a>
                     </div>
                     <!-- about left area start home three end -->
@@ -74,7 +74,7 @@
                 <div class="col-lg-6 mt_md--50 mt_sm--50">
                     <!-- about style six -->
                     <div class="about-style-three-right">
-                        <img src="{{ $data->sections[1]->image }}" alt="about">
+                        <img src="{{ asset('assets/images/banner/logo_backdrop.webp') }}" alt="about">
                     </div>
                     <!-- about style six end -->
                 </div>
@@ -103,9 +103,9 @@
                         <div class="team-single-three-style">
                             <a href="{{ route('frontend.meet-the-ceo') }}" class="name-team">
                                 <span>01</span>
-                                {{ $data->sections[2]->members[0]->name }}
+                                Adeoye Abefe Owolabi - Awíkonko
                             </a>
-                            <span class="designation"> {{ $data->sections[2]->members[0]->designation }}</span>
+                            <span class="designation">Professional Broadcast Journalist</span>
                             <div class="social-team-wrapper">
                                 <ul>
                                     <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
@@ -116,7 +116,7 @@
                             </div>
                             <a href="#"><i class="fa-solid fa-arrow-down-right"></i></a>
                             <div class="rts-hover-show-img">
-                                <img height="350" width="350" src="{{ $data->sections[2]->members[0]->image }}"
+                                <img height="350" width="350" src="{{ asset('assets/images/banner/awikonko.webp') }}"
                                     alt="Thumb">
                             </div>
                         </div>

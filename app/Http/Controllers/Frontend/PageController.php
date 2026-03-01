@@ -2,39 +2,29 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\DTO\HomePageDTO;
 use App\Http\Controllers\Controller;
-use App\Models\Page;
 
 class PageController extends Controller
 {
 
     public function home()
     {
-        $page = Page::where('slug', 'home')->first();
-        $data = new HomePageDTO($page->content['sections']);
-        return view('frontend.home', compact('data'));
+        return view('frontend.home');
     }
 
     public function about()
     {
-        $page = Page::where('slug', 'about')->first();
-        $data = $page->content['sections'];
-        return view('frontend.about', compact('data'));
+        return view('frontend.about');
     }
 
     public function meet_the_ceo()
     {
-        $page = Page::where('slug', 'meet-the-ceo')->first();
-        $data = $page->content['sections'];
-        return view('frontend.meet-the-ceo', compact('data'));
+        return view('frontend.meet-the-ceo');
     }
 
     public function contact_us()
     {
-        $page = Page::where('slug', 'contact-us')->first();
-        $data = $page->content['sections'];
-        return view('frontend.contact', compact('data'));
+        return view('frontend.contact');
     }
 
     public function registerParticipant()

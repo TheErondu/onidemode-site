@@ -46,7 +46,6 @@ class PaymentsController extends Controller
             'skills' => 'nullable|string|max:500', // Optional with a max length
             'additional_info' => 'nullable|string|max:1000', // Optional with a longer max length
             'recording_consent' => 'required|in:Yes,No', // Ensure it matches expected options
-            'rules_agreement' => 'required|in:Yes,No', // Ensure it matches expected options
         ]);
 
 

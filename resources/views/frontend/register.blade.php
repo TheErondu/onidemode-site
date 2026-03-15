@@ -63,6 +63,7 @@
             <form id="paymentForm" action="{{ route('frontend.register.pay') }}" method="POST"
                 class="contact-form-conatct-page">
                 @csrf
+                <input type="hidden" name="rules_agreement" value="Yes">
                 <!-- Personal Details -->
                 <h3>Personal Details</h3>
                 <div class="row g-5">
@@ -238,11 +239,9 @@
                         <p>2.4. Proof of payment may be requested at any time during the process.</p>
 
                         <h6>3. Game Format</h6>
-                        <p>3.1. The Game consists of two (2) main segments:</p>
+                        <p>The Game consists of theory of 15 Questions in 3 Segments of 5 Questions each</p>
                         <ul>
-                            <li><strong>Objective Segment:</strong> 10 compulsory multiple-choice questions.</li>
-                            <li><strong>Theory Segment:</strong> Open-ended questions which may follow the objective
-                                segment.</li>
+                            <li>Organizers reserve the right to modify the rules or structure at any time.</li>
                         </ul>
                         <p>3.2. During the Objective Segment, participants must answer each of the 10 questions within the
                             given time.</p>
@@ -294,7 +293,7 @@
 
                 <!-- Footer -->
                 <div class="modal-footer">
-                    <button type="button" id="confirmTerms" class="rts-btn btn-primary">Close</button>
+                    <button type="button" id="confirmTerms" class="rts-btn btn-primary">Agree and Close</button>
                 </div>
             </div>
         </div>

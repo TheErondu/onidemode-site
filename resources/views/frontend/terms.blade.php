@@ -82,15 +82,8 @@
       2.4. Proof of payment may be requested at any time during the process.
 
       3. Game Format
-      3.1. The Game consists of two (2) main segments:
-          - Objective Segment: 10 compulsory multiple-choice questions.
-          - Theory Segment: Open-ended questions which may follow the objective segment.
-      3.2. During the Objective Segment, participants must answer each of the 10 questions within the given time.
-      3.3. If a participant cannot answer, they may let the host answer. In such cases:
-          - The winning value is split 50/50 between participant and host.
-          - Participant gets credited with half the points.
-      3.4. After completing objective questions, the participant may end the game or proceed to Theory Segment.
-      3.5. Organizers reserve the right to modify the rules or structure at any time.
+      3.1. The Game consists of theory of 15 Questions in 3 Segments of 5 Questions each
+      3.2. Organizers reserve the right to modify the rules or structure at any time.
 
       4. Prizes
       4.1. Winners will receive advertised prizes.

@@ -29,7 +29,7 @@ class ParticipantRegistered extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Registration was successful',
+            subject: 'Application Received – Onidemode Game Show',
         );
     }
 

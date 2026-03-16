@@ -33,6 +33,7 @@
                             <th>Last Name</th>
                             <th>Phone</th>
                             <th>Email</th>
+                            <th>Payments</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -43,6 +44,11 @@
                             <td>{{ $participant->last_name }}</td>
                             <td>{{ $participant->phone }}</td>
                             <td>{{ $participant->email }}</td>
+                            <td>
+                                <span class="badge bg-{{ $participant->payments_count > 1 ? 'warning' : 'success' }}">
+                                    {{ $participant->payments_count }} payment{{ $participant->payments_count !== 1 ? 's' : '' }}
+                                </span>
+                            </td>
                             <td>
                                 <a href="{{ route('admin.settings.participants.show', $participant) }}" class="btn btn-primary btn-sm">View</a>
                                 <form action="{{ route('admin.settings.participants.destroy', $participant) }}" method="POST" style="display:inline-block;">

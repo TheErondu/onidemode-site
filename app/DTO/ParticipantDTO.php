@@ -14,6 +14,7 @@ class ParticipantDTO
     public ?string $proficiency;
     public ?string $read_write;
     public array $availability; // Array type
+    public ?string $availability_type;
     public ?string $proposed_date;
     public ?string $interest_reason;
     public ?string $experience;
@@ -36,6 +37,7 @@ class ParticipantDTO
         ?string $proficiency,
         ?string $read_write,
         array $availability,
+        ?string $availability_type,
         ?string $proposed_date,
         ?string $interest_reason,
         ?string $experience,
@@ -54,6 +56,7 @@ class ParticipantDTO
         $this->proficiency = $proficiency;
         $this->read_write = $read_write;
         $this->availability = $availability;
+        $this->availability_type = $availability_type;
         $this->proposed_date = $proposed_date;
         $this->interest_reason = $interest_reason;
         $this->experience = $experience;
@@ -82,6 +85,7 @@ class ParticipantDTO
             $data['proficiency'] ?? null,
             $data['read_write'] ?? null,
             $data['availability'] ?? [], // Default to an empty array
+            $data['availability_type'] ?? null,
             $data['proposed_date'] ?? null,
             $data['interest_reason'] ?? null,
             $data['experience'] ?? null,

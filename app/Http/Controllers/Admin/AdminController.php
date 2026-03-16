@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\GenericEmail;
 use App\Models\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
@@ -55,6 +56,16 @@ class AdminController  extends Controller
         return redirect()->route('admin.pages.manage', $page)->with('message', 'Page updated successfully!');
     }
 
+
+    public function clearCache()
+    {
+        Artisan::call('cache:clear');
+        Artisan::call('config:clear');
+        Artisan::call('view:clear');
+        Artisan::call('route:clear');
+
+        return redirect()->back()->with('message', 'All caches cleared successfully!');
+    }
 
     public function uploadFile(Request $request)
     {

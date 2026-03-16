@@ -164,6 +164,24 @@
                     </div>
                 </div>
 
+                <h3>Game Show Presence</h3>
+                <div class="row g-5">
+                    <div class="col-lg-12">
+                        <label>Would you be available On-site or Online via Zoom?</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="availability_type" id="inlineCheckbox7"
+                                value="onsite">
+                            <label class="form-check-label" for="inlineCheckbox7">On-site</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="availability_type" id="inlineCheckbox8"
+                                value="zoom">
+                            <label class="form-check-label" for="inlineCheckbox8">via Zoom</label>
+                        </div>
+                    </div>
+                   
+                </div>
+
                 <!-- Additional Questions -->
                 <h3>Additional Information</h3>
                 <div class="row g-5">

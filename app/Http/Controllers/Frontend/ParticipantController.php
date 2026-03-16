@@ -25,6 +25,7 @@ class ParticipantController extends Controller
                 'proficiency' => $details->proficiency,
                 'read_write' => $details->read_write,
                 'availability' => json_encode($details->availability), // Save array as JSON
+                'availability_type' => $details->availability_type,
                 'proposed_date' => $details->proposed_date,
                 'interest_reason' => $details->interest_reason,
                 'experience' => $details->experience,
@@ -34,6 +35,8 @@ class ParticipantController extends Controller
                 'rules_agreement' => $details->rules_agreement,
             ]
         );
+
+        $participant->update(['availability_type' => $details->availability_type]);
 
         return $participant;
     }

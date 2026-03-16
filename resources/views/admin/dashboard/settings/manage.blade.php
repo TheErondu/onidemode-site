@@ -104,6 +104,21 @@
         </div>
     </section>
 
+    <section class="section">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Cache Management</h4>
+            </div>
+            <div class="card-body">
+                <p class="text-muted">Clear all application caches (cache, config, views, routes). Use this after making configuration changes.</p>
+                <form method="POST" action="{{ route('admin.cache.clear') }}">
+                    @csrf
+                    <button type="submit" class="btn btn-warning">Clear All Caches</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <script>
         function previewImage(input, key) {
             const box = document.getElementById('preview-box-' + key);

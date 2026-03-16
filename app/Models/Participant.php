@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Payment;
 
 class Participant extends Model
 {
@@ -18,6 +19,7 @@ class Participant extends Model
         'proficiency',
         'read_write',
         'availability', // This might be stored as JSON
+        'availability_type',
         'proposed_date',
         'interest_reason',
         'experience',
@@ -27,9 +29,9 @@ class Participant extends Model
         'rules_agreement',
     ];
 
-    public function payment(): HasMany
+    public function payments(): HasMany
     {
-        return $this->hasMany(Participant::class);
+        return $this->hasMany(Payment::class);
     }
 }
 

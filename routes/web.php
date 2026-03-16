@@ -50,6 +50,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/back-office/payments/', [PaymentsController::class, 'index'])->name('admin.payments.manage');
     Route::resource('/back-office/users', UserController::class)->names('admin.settings.users');
     Route::resource('/back-office/participants', ParticipantController::class)->names('admin.settings.participants');
+    Route::post('/back-office/cache/clear', [AdminController::class, 'clearCache'])->name('admin.cache.clear');
     Route::get('back-office/profile', [ProfileController::class, 'edit'])->name('admin.profile.edit');
     Route::patch('back-office/profile', [ProfileController::class, 'update'])->name('admin.profile.update');
     Route::delete('back-office/profile', [ProfileController::class, 'destroy'])->name('admin.profile.destroy');

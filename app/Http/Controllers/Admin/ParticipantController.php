@@ -20,7 +20,7 @@ class ParticipantController extends Controller
     // Display a listing of the participants
     public function index()
     {
-        $participants = Participant::all();
+        $participants = Participant::withCount('payments')->get();
         return view('admin.dashboard.participants.index', compact('participants'));
     }
 
@@ -61,7 +61,7 @@ class ParticipantController extends Controller
     // Display the specified participant
     public function show(Participant $participant)
     {
-        // dd($participant);
+        $participant->load('payments');
         return view('admin.dashboard.participants.show', compact('participant'));
     }
 

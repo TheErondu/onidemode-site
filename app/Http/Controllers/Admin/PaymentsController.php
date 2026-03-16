@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\DTO\ParticipantDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Frontend\ParticipantController;
+use App\Mail\AdminPaymentNotification;
 use App\Mail\ParticipantRegistered;
 use App\Models\GameEntry;
 use App\Models\Payment;
@@ -40,6 +41,7 @@ class PaymentsController extends Controller
             'read_write' => 'required|in:Yes,No', // Ensure it matches expected options
             'availability' => 'required|array|min:1', // Validate availability as an array
             'availability.*' => 'string|max:255', // Validate each availability entry
+            'availability_type' => 'required|in:onsite,zoom',
             'proposed_date' => 'required|date|after_or_equal:today', // Ensure the date is valid and not in the past
             'interest_reason' => 'nullable|string|max:500', // Optional with a max length
             'experience' => 'nullable|string|max:500', // Optional with a max length
@@ -69,6 +71,7 @@ class PaymentsController extends Controller
                     'proficiency' => $request->proficiency,
                     'read_write' => $request->read_write === 'Yes' ? 1 : 0,
                     'availability' => $request->availability, // Array data can be handled as needed
+                    'availability_type' => $request->availability_type,
                     'proposed_date' => $request->proposed_date,
                     'interest_reason' => $request->interest_reason,
                     'experience' => $request->experience,
@@ -116,7 +119,6 @@ class PaymentsController extends Controller
                     'amount' => $paymentDetails['data']['amount'],
                     'status' => 'success',
                     'reference' => $reference,
-                    'paid_at' => now(),
                 ]);
 
                 // Create the corresponding game entry
@@ -130,13 +132,43 @@ class PaymentsController extends Controller
 
                 Mail::to($newParticipant->email)->queue(new ParticipantRegistered($paymentDetails['data']['metadata']));
 
+                $adminDetails = [
+                    'status'     => 'success',
+                    'first_name' => $participantDetails->first_name,
+                    'last_name'  => $participantDetails->last_name,
+                    'email'      => $participantDetails->email,
+                    'amount'     => $paymentDetails['data']['amount'],
+                    'reference'  => $reference,
+                ];
+                Mail::to(config('mail.from.address'))->queue(new AdminPaymentNotification($adminDetails));
+
                 return view('frontend.registration-complete', compact('newParticipant'));
             } else {
                 // Payment failed, redirect back to registration with error
+                $adminDetails = [
+                    'status'     => 'failed',
+                    'first_name' => $paymentDetails['data']['metadata']['first_name'] ?? 'Unknown',
+                    'last_name'  => $paymentDetails['data']['metadata']['last_name'] ?? '',
+                    'email'      => $paymentDetails['data']['metadata']['email'] ?? 'Unknown',
+                    'amount'     => $paymentDetails['data']['amount'] ?? 0,
+                    'reference'  => $paymentDetails['data']['reference'] ?? 'N/A',
+                ];
+                Mail::to(config('mail.from.address'))->queue(new AdminPaymentNotification($adminDetails));
+
                 return redirect()->route('frontend.participants.register')->withErrors('Payment failed. Duplicate transaction detected!');
             }
         } else {
             // Payment failed, redirect back to registration with error
+            $adminDetails = [
+                'status'     => 'failed',
+                'first_name' => $paymentDetails['data']['metadata']['first_name'] ?? 'Unknown',
+                'last_name'  => $paymentDetails['data']['metadata']['last_name'] ?? '',
+                'email'      => $paymentDetails['data']['metadata']['email'] ?? 'Unknown',
+                'amount'     => $paymentDetails['data']['amount'] ?? 0,
+                'reference'  => $paymentDetails['data']['reference'] ?? 'N/A',
+            ];
+            Mail::to(config('mail.from.address'))->queue(new AdminPaymentNotification($adminDetails));
+
             return redirect()->route('frontend.participants.register')->withErrors('Payment failed. Please try again.');
         }
     }

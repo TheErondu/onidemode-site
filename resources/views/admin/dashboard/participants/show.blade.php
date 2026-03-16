@@ -72,6 +72,18 @@
                                 </td>
                             </tr>
                             <tr>
+                                <th>Game Show Presence</th>
+                                <td>
+                                    @if ($participant->availability_type === 'onsite')
+                                        <span class="badge bg-success">On-site</span>
+                                    @elseif ($participant->availability_type === 'zoom')
+                                        <span class="badge bg-info">Via Zoom</span>
+                                    @else
+                                        <span class="text-muted">—</span>
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
                                 <th>Proposed Date</th>
                                 <td><strong>{{\App\Utils\CustomFormatter::formatDate($participant->proposed_date)}} </strong></td>
                             </tr>
@@ -103,6 +115,44 @@
                     </table>
                 </div>
             </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h5 class="mb-3">Payments</h5>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Reference</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Paid At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse ($participant->payments as $payment)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td><code>{{ $payment->reference }}</code></td>
+                                    <td>₦{{ number_format($payment->amount / 100, 2) }}</td>
+                                    <td>
+                                        <span class="badge bg-{{ $payment->status === 'success' ? 'success' : 'danger' }}">
+                                            {{ ucfirst($payment->status) }}
+                                        </span>
+                                    </td>
+                                    <td>{{ $payment->created_at->format('d M Y, h:i A') }}</td>
+                                </tr>
+                                @empty
+                                <tr>
+                                    <td colspan="5" class="text-center">No payments found.</td>
+                                </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
             <div class="row mt-4">
                 <div class="col-md-6">
                     <a href="{{ route('admin.settings.participants.index') }}" class="btn btn-secondary">Back to List</a>

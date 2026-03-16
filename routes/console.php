@@ -8,4 +8,5 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote')->hourly();
 
-Schedule::command('queue:work --stop-when-empty')->everyFiveMinutes();
+Schedule::command('queue:work', ['--stop-when-empty'])->everyFiveMinutes();
+Schedule::command('optimize')->daily();
